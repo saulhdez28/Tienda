@@ -23,14 +23,14 @@ public class Categoria implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")
     private long idCategoria;
-    private String description;
+    private String descripcion;
     private boolean activo;
 
     public Categoria() {
     }
 
-    public Categoria(String description, boolean activo) {
-        this.description = description;
+    public Categoria(String descripcion, boolean activo) {
+        this.descripcion = descripcion;
         this.activo = activo;
     }
 
