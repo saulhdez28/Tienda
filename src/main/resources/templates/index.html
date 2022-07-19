@@ -16,14 +16,14 @@
                         <tr>
                             <th th:text="#{articulo.descripcion}">Descripcion</th>
                             <th th:text="#{articulo.precio}">Precio</th>
-                            <th th:text="#{articulo.comprar}"></th>
+                            <th th:text="#{articulo.comprar}" sec:authorize="hasRole('ROLE_ADMIN')"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="item : ${articulos}">
                             <td th:text="${item.descripcion}"></td>
                             <td th:text="${#numbers.formatDecimal(item.precio, 3, 2)}"></td>
-                            <td><a th:href="@{/articulo/nuevo/}"
+                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/articulo/nuevo/}"
                                    th:text="#{accion.agregar}">Agregar</a></td>
                             
                         </tr>
