@@ -5,10 +5,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TechShop</title>
-        <meta charset="UTF-8">
-            <link th:href="@{/css/menu.css}" rel="stylesheet" type="text/css"/>
+    <head th:replace="layout/plantilla :: head">
+        <title>Techshop</title>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
@@ -31,5 +29,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <input type="submit" name="guardar" value="Guardar" />
             </form>
         </div>
+        
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>

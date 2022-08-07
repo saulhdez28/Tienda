@@ -11,13 +11,13 @@
             <h2 th:text="#{index.titulo}">Nuestros Articulos</h2>            
             <div class="row row-cols-3" th:if="${articulos != null and !articulos.empty}">
                 <div class="card" th:each="articulo : ${articulos}" >
-                <img src="/images/equipo1.png" class="card-img-top" alt="equipo">
-                    <div class="card-body">
-                        <h5 class="card-title">[[${articulo.descripcion}]]</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(articulo.precio)}]]</h6>
-                        <a class="card-link" th:href="@{/carrito/agregar/} + ${articulo.idArticulo}">[[#{articulo.comprar}]]</a>
-                        <p class="card-text">[[${articulo.detalle}]]</p>                        
-                    </div>
+                    <img src="/images/equipo1.png" class="card-img-top" alt="equipo">
+                        <div class="card-body">
+                            <h5 class="card-title">[[${articulo.descripcion}]]</h5>
+                            <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(articulo.precio)}]]</h6>
+                            <a class="card-link" th:href="@{/carrito/agregar/} + ${articulo.idArticulo}">[[#{articulo.comprar}]]</a>
+                            <p class="card-text">[[${articulo.detalle}]]</p>                        
+                        </div>
                 </div>                
             </div>
             <div th:if="${articulos == null or articulos.empty}"  th:text="#{articulo.no_mostrar}">

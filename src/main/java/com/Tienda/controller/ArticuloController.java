@@ -54,7 +54,7 @@ public class ArticuloController {
         return "/articulo/modificar";
     }
 
-    @GetMapping("/eliminarArticulo/{idArticulo}")
+    @GetMapping("/articulo/eliminar/{idArticulo}")
     public String eliminarArticulo(Articulo articulo) {
         articuloService.delete(articulo);
         return "redirect:/articulo/listado";

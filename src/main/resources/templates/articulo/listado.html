@@ -1,11 +1,7 @@
 
 <html xmlns:sec="http://thymeleaf.org/extras/spring-security">
-    
-    <head>
-        <title>techShop</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link th:href="@{/css/menu.css}" rel="stylesheet" type="text/css"/>
+    <head th:replace="layout/plantilla :: head">
+        <title>Techshop</title>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
@@ -31,9 +27,9 @@
                             <td th:text="${item.existencias}"></td>
                             <td><input type="checkbox" name="activo" th:checked="${item.activo}" disabled="true" /> </td>
                             <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/articulo/modificar/} + ${item.idArticulo}"
-                                   th:text="#{accion.actualizar}">Modificar</a></td>
+                                                                         th:text="#{accion.actualizar}">Modificar</a></td>
                             <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/articulo/eliminar/} + ${item.idArticulo}"
-                                   th:text="#{accion.eliminar}">Eliminar</a></td>
+                                                                         th:text="#{accion.eliminar}">Eliminar</a></td>
                         </tr>
                     </tbody>
                 </table>
